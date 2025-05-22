@@ -6,7 +6,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Fichiers sources et objets
-SRCS = src/pipex.c src/get_path.c src/pipe_utils.c src/child_process.c src/exec_cmd.c src/cleanup.c src/ft_split.c
+SRCS = src/pipex.c src/get_path.c src/pipe_utils.c src/child_process.c src/exec_cmd.c src/cleanup.c src/ft_split.c src/utils.c src/file_utils.c
 OBJS = $(SRCS:.c=.o)
 
 # Dépendances

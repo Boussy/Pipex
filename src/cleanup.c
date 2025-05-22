@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleanup.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bferdjan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bferdjan <bferdjan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 00:19:09 by bferdjan          #+#    #+#             */
-/*   Updated: 2025/03/13 00:19:10 by bferdjan         ###   ########.fr       */
+/*   Updated: 2025/05/22 03:38:37 by bferdjan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,6 @@ void	close_and_cleanup(int fd_in, int fd_out, int pipe_fd[2])
 	close(fd_out);
 	close(pipe_fd[0]);
 	close(pipe_fd[1]);
-}
-
-int	create_pipe(int pipe_fd[2])
-{
-	if (pipe(pipe_fd) == -1)
-	{
-		perror("pipex: pipe failed");
-		return (0);
-	}
-	return (1);
 }
 
 void	ft_free_array(char **arr)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bferdjan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bferdjan <bferdjan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 00:20:01 by bferdjan          #+#    #+#             */
-/*   Updated: 2025/03/13 00:20:03 by bferdjan         ###   ########.fr       */
+/*   Updated: 2025/05/22 03:38:37 by bferdjan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,18 @@
 //                        write(), read(), close()
 
 // process
-void	pipex(char **av, char **envp);
+int		pipex(char **av, char **envp);
 void	child1(int pipe_fd[2], char **av, char **envp);
 void	child2(int pipe_fd[2], char **av, char **envp);
 void	execute_cmd(char *cmd, char **envp);
+
+// file handling utils
+void	handle_dup_error(int fd_in, int pipe_fd[2], char *msg);
+void	handle_dup_out_error(int fd_out, int pipe_fd[2], char *msg);
+int		open_input_file(char *file, int pipe_fd[2]);
+int		open_output_file(char *file, int pipe_fd[2]);
+void	create_pipe(int *pipe_fd);
+pid_t	create_process(void);
 
 // path
 char	*get_path(char *cmd, char **envp);
